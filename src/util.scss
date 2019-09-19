@@ -1,0 +1,21 @@
+$black: #000;
+$gray:#777;
+$border: #e4e2e2;
+
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
