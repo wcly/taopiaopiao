@@ -6,38 +6,75 @@ import TopBar from './components/TopBar';
 import PosterSlide from './components/PosterSlide';
 import MovieItem from './components/MovieItem';
 import CityLayer from './components/CityLayer';
+import request from './../../utils/request';
 
 export default class Home extends Component {
-  showCitylayer = () => {
-    console.log("show city layer");
+  state = {
+    city: '',
+    poster: [],
+    movie: [],
+    cityLayerVisible: false,
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData = async () => {
+    const data = await request('/index');
+    const { city, poster, movie } = data;
+
+    this.setState({
+      city,
+      poster,
+      movie
+    })
+  }
+
+  showCityLayer = () =>{
+    this.setState({
+      cityLayerVisible: true
+    })
+  }
+
+  hideCityLayer = () => {
+    this.setState({
+      cityLayerVisible: false
+    })
+  }
+
+  onChangeCity = city =>{
+    this.setState({
+      city
+    })
+    this.hideCityLayer()
   }
 
   render() {
+    const { city, poster, movie, cityLayerVisible } = this.state
+
     return (
       <div className="home">
-        <TopBar city="杭州" showCitylayer={this.showCitylayer} />
+        <TopBar city={city} showCitylayer={this.showCityLayer} />
         <div className="home__slide">
           <div className="home__slideWrap">
-            <PosterSlide data={[]} />
+            <PosterSlide data={poster} />
           </div>
         </div>
         <ul className="home__content">
-          <li>
-            <MovieItem />
-          </li>
-          <li>
-            <MovieItem />
-          </li>
-          <li>
-            <MovieItem />
-          </li>
-          <li>
-            <MovieItem />
-          </li>
+          {
+            movie.map(item => {
+              return (
+                <li key={item.name}>
+                  <MovieItem data={item} />
+                </li>
+              )
+            })
+          }
         </ul>
-        <TabMenu current="movie"/>
+        <TabMenu current="movie" />
         <RenderToBody>
-          <CityLayer/>
+          {cityLayerVisible && <CityLayer onClose={this.hideCityLayer} onSelect={this.onChangeCity}/>}
         </RenderToBody>
       </div>
     );
