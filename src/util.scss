@@ -1,7 +1,9 @@
-$black: #000;
-$gray:#777;
-$border: #e4e2e2;
+//  variable
 
+$black: #000;
+$gray: #777;
+$border: #E4E2E2;
+$active: #ef819e;
 
 @mixin flex-between {
   display: flex;
@@ -10,12 +12,18 @@ $border: #e4e2e2;
 
 @mixin flex-center {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 @mixin flex-v-center {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+}
+
+@mixin line-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

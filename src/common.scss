@@ -32,3 +32,24 @@
   border: none;
   outline: none;
 }
+
+.tOperator{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  line-height: 40px;
+
+  &__icon{
+    width: 40px;
+    height: 40px;
+  }
+
+  &__icon--setting{
+    background: transparent url('./icons/setting.svg') 0% 50% / 20px 20px no-repeat;
+  }
+
+  &__icon--message{
+    background: transparent url('./icons/message.svg') 100% 50% / 20px 20px no-repeat;
+  }
+}

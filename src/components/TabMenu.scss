@@ -1,6 +1,6 @@
-@import './../util.scss';
+@import "./../util.scss";
 
-.tabMenu{
+.tabMenu {
   display: flex;
   position: fixed;
   bottom: 0;
@@ -9,44 +9,45 @@
   background-color: #fff;
   border-top: 1px solid $border;
 
-  &__btn{
+  &__btn {
     flex: 1;
-    @include flex-center;
     flex-direction: column;
     text-decoration: none;
+
+    @include flex-center;
   }
 
-  &__icon{
+  &__icon {
     display: block;
     width: 22px;
     height: 22px;
+    background-color: #ccc;
 
-    &--movie{
-      background: #fff url("./../icons/movie.png") 50% / contain no-repeat;
+    &--movie {
+      background: #fff url("../icons/movie.png") 50% / contain no-repeat;
     }
 
-    &--user{
-      background: #fff url("./../icons/user.png") 50% / contain no-repeat;
+    &--user {
+      background: #fff url("../icons/user.png") 50% / contain no-repeat;
     }
   }
 
-  &__btn--active{
-    .tabMenu__text{
+  &__btn--active {
+    .tabMenu__text {
       color: #ff4c64;
     }
 
-    .tabMenu__icon{
-      &--movie{
-        background: #fff url("./../icons/movie-solid.png") 50% / contain no-repeat;
+    .tabMenu__icon {
+      &--movie {
+        background: #fff url("../icons/movie-solid.png") 50% / contain no-repeat;
       }
-
-      &--user{
-        background: #fff url("./../icons/user-solid.png") 50% / contain no-repeat;
+      &--user {
+        background: #fff url("../icons/user-solid.png") 50% / contain no-repeat;
       }
     }
   }
 
-  &__text{
+  &__text {
     color: #666;
     font-size: 10px;
     margin-top: 4px;
