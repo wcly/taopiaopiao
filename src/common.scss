@@ -52,4 +52,12 @@
   &__icon--message{
     background: transparent url('./icons/message.svg') 100% 50% / 20px 20px no-repeat;
   }
+
+  &__icon--back{
+    background: transparent url('./icons/back.svg') 0% 50% / 20px 20px no-repeat;
+  }
+
+  &__icon--share{
+    background: transparent url('./icons/share.svg') 100% 50% / 20px 20px no-repeat;
+  }
 }
