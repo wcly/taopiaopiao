@@ -1,0 +1,78 @@
+@import "./../../../util.scss";
+
+.seatSelected {
+    border-top: 1px solid $border;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+
+    &__list {
+        list-style: none;
+        padding: 10px 20px;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    &__item:nth-child(n+2) {
+        margin-left: 10px;
+    }
+
+    .movieTicket {
+        width: 84px;
+        height: 36px;
+        border: 1px solid $border;
+        border-radius: 4px;
+        padding: 2px;
+        display: flex;
+
+        &__detail {
+            padding-left: 10px;
+            flex: 1;
+        }
+
+        &__pos {
+            font-size: 14px;
+            color: $black;
+            line-height: 20px;
+        }
+
+        &__price {
+            font-size: 12px;
+            line-height: 18px;
+            color: #82c57b;
+        }
+
+        &__tag{
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 2px;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            background-color: #82c57b;
+            font-style: normal;
+            color: #fff;
+            margin-right: 6px;
+        }
+
+        &__close {
+            width: 20px;
+            background: url("./../../../icons/close.svg") 50% / 10px 10px no-repeat;
+        }
+    }
+
+    &__buy{
+        width: 100%;
+        height: 56px;
+        color:#fff;
+        text-align: center;
+        line-height: 56px;
+        background: #ee798e;
+    }
+}

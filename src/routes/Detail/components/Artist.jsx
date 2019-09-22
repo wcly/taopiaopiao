@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Artist.scss'
 
-function Artist({data}) {
+function Artist({ data }) {
     return (
         <div className="mArtist">
             <ul className="mArtist__list">
                 {
-                    data.map(item =>(
+                    data.map(item => (
                         <li key={item.name}>
                             <a href="#" className="artistInfo">
                                 <div className="artistInfo__image" style={{ backgroundImage: `url(${item.image})` }}></div>

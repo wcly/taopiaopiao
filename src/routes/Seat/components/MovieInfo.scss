@@ -1,0 +1,19 @@
+@import "./../../../util.scss";
+
+.seatMovieInfo{
+    padding: 4px 20px;
+    border-bottom: 1px solid $border;
+    border-top: 1px solid $border;
+
+    &__title{
+        color: $black;
+        font-size: 16px;
+        font-weight: 400px;
+    }
+
+    &__info{
+        color: $gray;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}

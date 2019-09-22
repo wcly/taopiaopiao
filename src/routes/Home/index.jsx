@@ -7,6 +7,7 @@ import PosterSlide from './components/PosterSlide';
 import MovieItem from './components/MovieItem';
 import CityLayer from './components/CityLayer';
 import request from './../../utils/request';
+import { Link } from 'react-router-dom'
 
 export default class Home extends Component {
   state = {
@@ -31,7 +32,7 @@ export default class Home extends Component {
     })
   }
 
-  showCityLayer = () =>{
+  showCityLayer = () => {
     this.setState({
       cityLayerVisible: true
     })
@@ -43,7 +44,7 @@ export default class Home extends Component {
     })
   }
 
-  onChangeCity = city =>{
+  onChangeCity = city => {
     this.setState({
       city
     })
@@ -66,7 +67,9 @@ export default class Home extends Component {
             movie.map(item => {
               return (
                 <li key={item.name}>
-                  <MovieItem data={item} />
+                  <Link to="detail">
+                    <MovieItem data={item} />
+                  </Link>
                 </li>
               )
             })
@@ -74,7 +77,7 @@ export default class Home extends Component {
         </ul>
         <TabMenu current="movie" />
         <RenderToBody>
-          {cityLayerVisible && <CityLayer onClose={this.hideCityLayer} onSelect={this.onChangeCity}/>}
+          {cityLayerVisible && <CityLayer onClose={this.hideCityLayer} onSelect={this.onChangeCity} />}
         </RenderToBody>
       </div>
     );

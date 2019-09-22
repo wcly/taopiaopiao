@@ -25,6 +25,14 @@ body {
 }
 
 /**
+ * Remove text underline in a.
+ */
+a{
+  text-decoration: none;
+}
+
+
+/**
  * Render the `main` element consistently in IE.
  */
 

@@ -29,7 +29,7 @@ export default class Detail extends Component {
         }
     }
 
-    toggleIamge = () =>{
+    toggleIamge = () => {
         this.setState({
             showImage: !this.state.showImage
         })
@@ -42,14 +42,14 @@ export default class Detail extends Component {
             <div className="detail">
                 <div className="detail__top">
                     <div className="tOperator">
-                        <div className="tOperator__icon tOperator__icon--back"></div>
+                        <div className="tOperator__icon tOperator__icon--back" onClick={() => window.history.back()}></div>
                         <div className="tOperator__icon tOperator__icon--share"></div>
                     </div>
-                    <BaseInfo onShowImage={this.toggleIamge}/>
+                    <BaseInfo onShowImage={this.toggleIamge} />
                 </div>
                 <div className="detail__content">
                     <div className="detail__module">
-                        <ScoreSummary/>
+                        <ScoreSummary />
                     </div>
                     <div className="detail__module">
                         <CollpasibleText>
@@ -76,7 +76,7 @@ export default class Detail extends Component {
                     </div>
                 </div>
                 <Link to="/seat" className="detail__buyBtn">选座购票</Link>
-                {showImage && <ImageSlider onClose={this.toggleIamge}/>}
+                {showImage && <ImageSlider onClose={this.toggleIamge} />}
             </div>
         )
     }
